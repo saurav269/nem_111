@@ -15,7 +15,7 @@ require('dotenv').config()
           try{
             bcrypt.hash( pass,5, async(err,hash) =>{
                 if(err){
-                    console.log({"bcrypt err":err})
+                    console.log({"bcrypt error":err})
                 }else{
                     const user = new New_user_Model({name, email, pass : hash})
                     await user.save()
