@@ -8,6 +8,8 @@ require('dotenv').config()
       const userRouter = express.Router()
 
 
+
+
       userRouter.post("/register", async(req,res) =>{
         const {name,email,pass} = req.body
           try{
@@ -17,7 +19,7 @@ require('dotenv').config()
                 }else{
                     const user = new New_user_Model({name, email, pass : hash})
                     await user.save()
-                    res.send("Register Succesfully")
+                    res.send("User Register Succesfully")
                 }
             })
           }catch(err){
